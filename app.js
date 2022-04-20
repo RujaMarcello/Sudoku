@@ -101,9 +101,9 @@ function generateMatrixGame() {
     }
     for (let line = 1; line < 9; ++line) {
         if (line == 3 || line == 6) {
-            makePermutWhite1Position();
+            makePermutWith1Position();
         } else {
-            makePermutWhit3Position();
+            makePermutWith3Position();
         }
         for (let column = 0; column < 9; ++column) {
             matrix[line][column] = array[column];
@@ -112,7 +112,7 @@ function generateMatrixGame() {
     fill();
 }
 
-function makePermutWhit3Position() {
+function makePermutWith3Position() {
     for (let cnt = 0; cnt < 3; ++cnt) {
         let retainValue = array[0];
         for (let position = 1; position < 9; ++position) {
@@ -122,7 +122,7 @@ function makePermutWhit3Position() {
     }
 }
 
-function makePermutWhite1Position() {
+function makePermutWith1Position() {
     let retainValue = array[0];
     for (let position = 1; position < 9; ++position) {
         array[position - 1] = array[position];
