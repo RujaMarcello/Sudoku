@@ -156,8 +156,8 @@ function game(line, column) {
     if (fillValue != 0) {
         if (board.rows[line].cells[column].textContent == "") {
             board.rows[line].cells[column].textContent = fillValue;
-            chackWin();
             checkIfIsCorect(line, column);
+            chackWin();
         } else {
             alert("TRY OTHER FILD");
         }
@@ -208,17 +208,18 @@ function colorTheWrongFields(line, column, cases) {
 }
 
 function chackWin() {
-    let check = 1;
+    var check = 1;
     for (let line = 0; line < 9; ++line) {
         for (let column = 0; column < 9; ++column) {
             if (board.rows[line].cells[column].textContent != matrix[line][column]) {
-                chack = 0;
+                check = 0;
             }
         }
     }
+    console.log(check);
     if (check == 1) {
         document.getElementById("winFild").textContent = "YOU WIN";
-        return;
+        return false;
     }
 }
 
